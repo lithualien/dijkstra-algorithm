@@ -17,20 +17,46 @@
                 crossorigin="anonymous"></script>
     </head>
     <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-12" id="alert">
+                    <h1>Naudojimosi instrukcija:</h1>
+                    <p>Laukelių skaičius reguliuoja visos lentelės eilučių ir stulpelių skaičių.</p>
+                    <p>Įvedant į laukelius duomenis, priešingas duomenis irgi keičiasi, pvz: redaguojamas 1 eilutės 5 stulpelis, 5 eilutės 1 stulpelio reiškmė irgi pakis.</p>
+                    <p>Pradžios taškas yra nustatoma ta koordinatė iš kurios norima nueiti.</p>
+                    <p>Pabaigos taškas yra nustatoma ta koordinatė į kurią norima nueiti.</p>
+                    <p>Ieškoti mygtuko paspaudimas suranda trumpiausią kelią nuo pasirinktų koordinačių.</p>
+                    <div class="form-group">
+                        <label><b>Laukelių skaičius</b></label>
+                        <input class="form-control" type="number" id="fields-create" name="number-fields" min="2" onclick="createTableFields()" value="2" required />
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label><b>Pradžios taškas</b></label>
+                        <input class="form-control" type="number" id="beginning-coordinate" name="beginning-coordinate" min="1" value="1" required />
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label><b>Pabaigos taškas</b></label>
+                        <input class="form-control" type="number" id="ending-coordinate" name="ending-coordinate" min="2" value="2" required />
+                    </div>
+                </div>
+                <div class="col-12 mb-4">
+                    <button type="button" class="btn btn-primary" onclick="checkForDataValidity()">Ieškoti</button>
+                </div>
+            </div>
+        </div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <div class="form-group">
-                        <label>Laukelių skaičius</label>
-                        <input class="form-control" type="number" id="fields-create" name="number-fields" min="2" onclick="printValueToConsole()" value="2" required />
-                        <button type="submit" onclick="sendData()"> Ieškoti </button>
+                    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                        <table class="table table-bordered table-striped mb-0">
+                            <tbody id="table-body">
+                            </tbody>
+                        </table>
                     </div>
-                </div>
-                <div class="col-12">
-                    <table>
-                        <tbody id="table-body">
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>

@@ -11,3 +11,8 @@ th {
 #table-first {
     padding: 10px;
 }
+
+table {
+    margin-right: auto;
+    margin-left: auto;
+}
